@@ -1,0 +1,93 @@
+[
+  {
+    "tag": "salam",
+    "keywords": ["halo", "hai", "hi", "selamat pagi", "selamat siang", "selamat sore", "selamat malam"],
+    "answer": "Halo 👋 Selamat datang di Gardian Farm. Ada yang bisa kami bantu?"
+  },
+  {
+    "tag": "jam_operasional",
+    "keywords": ["jam buka", "jam operasional", "buka jam berapa", "sampai jam berapa", "tutup jam berapa"],
+    "answer": "Toko Gardian Farm buka setiap hari dari pukul 08.00 sampai 21.00 WIB, Khusus hari minggu tutup."
+  },
+  {
+    "tag": "alamat",
+    "keywords": ["alamat", "lokasi", "di mana", "dimana", "maps", "google maps", "cacaban"],
+    "answer": "Alamat Toko Gardian Farm berada di Desa Cacaban, Kabupaten Tegal, Jawa Tengah."
+  },
+  {
+    "tag": "cara_order",
+    "keywords": ["cara order", "cara pesan", "beli bagaimana", "order dimana", "order lewat apa", "pesan lewat apa"],
+    "answer": "Anda dapat melakukan pemesanan melalui:\n• Tokopedia\n• Shopee\n• WhatsApp: 087849755326\n• Datang langsung ke toko kami di Desa Cacaban, Tegal."
+  },
+  {
+    "tag": "produk",
+    "keywords": ["jual apa saja",  "ada apa saja","produk apa saja", "barang apa saja", "melon madu", "melon"],
+    "answer": "Toko Gardian Farm menyediakan berbagai produk melon madu segar, melon manis pilihan, serta buah melon berkualitas lainnya."
+  },
+  {
+    "tag": "harga",
+    "keywords": ["harga", "berapa harga", "harganya berapa", "price", "kisaran harga"],
+    "answer": "Untuk informasi harga terbaru, silakan hubungi kami melalui WhatsApp di 087849755326 agar kami bisa memberikan detail sesuai stok hari ini."
+  },
+  {
+    "tag": "stok",
+    "keywords": ["stok", "masih ada", "tersedia", "ready", "ada tidak"],
+    "answer": "Untuk memastikan ketersediaan stok hari ini, silakan hubungi admin kami melalui WhatsApp di 087849755326."
+  },
+  {
+    "tag": "metode_pembayaran",
+    "keywords": ["metode pembayaran", "pembayaran", "cara bayar", "bayar pakai apa", "transfer lewat apa"],
+    "answer": "Metode pembayaran yang kami terima:\n• Transfer Bank (BCA, Mandiri, BNI, Bank Jateng)\n• Dompet Digital (OVO, DANA, GoPay)"
+  },
+  {
+    "tag": "pengiriman",
+    "keywords": ["pengiriman", "delivery", "kirim ke luar kota", "ongkir", "ekspedisi"],
+    "answer": "Kami melayani pengiriman menggunakan jasa ekspedisi. Untuk area dan ongkos kirim, silakan hubungi admin kami via WhatsApp."
+  },
+  {
+    "tag": "whatsapp",
+    "keywords": ["whatsapp", "wa", "nomor wa", "kontak", "hubungi"],
+    "answer": "Anda dapat menghubungi kami melalui WhatsApp di nomor 087849755326."
+  },
+  {
+    "tag": "terima_kasih",
+    "keywords": ["terima kasih", "makasih", "thanks", "thank you"],
+    "answer": "Terima kasih telah menghubungi Toko Gardian Farm 🍈 Kami siap melayani Anda."
+  },
+  {
+    "tag": "kata_kasar",
+    "keywords": ["bodoh", "anjing", "bangsat", "kontol", "tolol"],
+    "answer": "Mohon maaf, kami tidak dapat menanggapi pesan yang mengandung kata tidak sopan. Terima kasih atas pengertiannya."
+  },
+  {
+    "tag": "fallback",
+    "keywords": [],
+    "answer": "Maaf, informasi yang Anda cari belum tersedia. Silakan hubungi admin kami melalui WhatsApp di 087849755326 untuk bantuan lebih lanjut."
+  },
+  {
+    "tag": "promo",
+    "keywords": ["promo", "diskon", "potongan harga", "penawaran khusus"],
+    "answer": "saat ini kami mengadakan proomo beli 2 gratis 1 untuk semua jenis melon.Stok terbatas!!! Yuk buruan order sebelum kehabisan."
+  },
+  {
+    "tag": "hari_buka_tutup",
+    "keywords":["hari buka",
+    "hari tutup",
+    "buka hari apa",
+    "tutup hari apa",
+    "toko buka hari apa",
+    "toko tutup hari apa",
+    "hari operasional",
+    "hari kerja toko",
+    "buka setiap hari",
+    "libur hari apa",
+    "hari libur toko",
+    "toko libur",
+    "apakah buka hari ini",
+    "hari ini buka",
+    "hari ini tutup"],
+    "answer": "Toko Gardian Farm buka setiap hari, Senin sampai , dari pukul 08.00 hingga 21.00 WIB. Saat ini tidak ada hari libur khusus."
+  
+  }
+
+]
