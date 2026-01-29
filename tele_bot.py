@@ -1,35 +1,71 @@
 import logging
-import asyncio # Penting untuk mengatasi bug Python 3.14 jika masih ada
+import os
+import json
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
-from core import get_bot_reply 
 
+from core import get_bot_reply
+
+# =============================
+# LOGGING
+# =============================
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
+# =============================
+# ENVIRONMENT VARIABLES
+# =============================
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+if not TOKEN:
+    print("❌ TELEGRAM_BOT_TOKEN belum diset")
+    exit()
+
+# =============================
+# MEMORY SINGKAT PER CHAT
+# =============================
+conversation_history = {}  # {chat_id: [{"user": msg, "bot": msg}, ...]}
+
+# =============================
+# COMMAND /START
+# =============================
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Halo! Saya bot toko Garadian Farm. Ada yang bisa dibantu?")
+    chat_id = update.effective_chat.id
+    conversation_history[chat_id] = []  # reset history
+    await update.message.reply_text(
+        "Halo 👋 Saya Chatbot Toko Gardian Farm 🌱\n"
+        "Silakan ketik pertanyaanmu atau ingin memesan produk 😊"
+    )
 
+# =============================
+# HANDLE PESAN USER
+# =============================
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat_id = update.effective_chat.id
     user_text = update.message.text
-    # Mengambil jawaban dari file core.py yang terhubung ke json
-    response = get_bot_reply(user_text) 
-    await update.message.reply_text(response)
 
+    if chat_id not in conversation_history:
+        conversation_history[chat_id] = []
+
+    # Jawab dari core.py saja (tanpa AI)
+    reply = get_bot_reply(user_text)
+
+    # simpan history
+    conversation_history[chat_id].append({"user": user_text, "bot": reply})
+
+    await update.message.reply_text(reply)
+
+# =============================
+# MAIN PROGRAM
+# =============================
 if __name__ == '__main__':
-    TOKEN = '7776558268:AAGnV5yXDydDy_cw5RS9zH67xG_ixiqDLOo'
-    
-    # Membangun aplikasi
-    app = ApplicationBuilder().token(TOKEN).build()
+    print("🤖 Bot Toko Gardian Farm sedang dijalankan...")
 
-    app.add_handler(CommandHandler('start', start))
+    app = ApplicationBuilder().token(TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message))
 
-    print("--- Bot Siap Digunakan ---")
-    
-    # Gunakan run_polling standar
     app.run_polling()
